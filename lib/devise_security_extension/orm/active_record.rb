@@ -1,3 +1,5 @@
+require 'active_record/connection_adapters/abstract_adapter'
+
 module DeviseSecurityExtension
   module Orm
     # This module contains some helpers and handle schema (migrations):
