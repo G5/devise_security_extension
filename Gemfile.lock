@@ -74,7 +74,13 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
-    minitest (5.10.3)
+    minitest (4.7.5)
+    minitest-rails (1.0.1)
+      minitest (~> 4.7)
+      minitest-test (~> 1.0)
+      railties (>= 3.0, < 4.1)
+    minitest-test (1.1.0)
+      minitest (~> 4.0)
     multi_json (1.12.2)
     netrc (0.11.0)
     orm_adapter (0.0.7)
@@ -178,7 +184,7 @@ DEPENDENCIES
   devise (= 1.5.4)
   devise_security_extension!
   easy_captcha (~> 0)
-  minitest
+  minitest-rails
   rails (= 3.1.12)
   rails_email_validator (~> 0)
   rubocop (~> 0)
