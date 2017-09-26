@@ -16,7 +16,7 @@ class Devise::ParanoidVerificationCodeController < ApplicationController
     if resource.verify_code(resource_params[:paranoid_verification_code])
       warden.session(scope)['paranoid_verify'] = false
       set_flash_message :notice, :updated
-      bypass_sign_in resource, scope: scope
+      sign_in resource, scope: scope, bypass: true
       redirect_to stored_location_for(scope) || :root
     else
       respond_with(resource, action: :show)
