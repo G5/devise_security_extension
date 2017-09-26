@@ -1,4 +1,4 @@
-class Devise::ParanoidVerificationCodeController < DeviseController
+class Devise::ParanoidVerificationCodeController < ApplicationController
   skip_before_filter :handle_paranoid_verification
   prepend_before_filter :authenticate_scope!, :only => [:show, :update]
 
