@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class Devise::PasswordExpiredControllerTest < ActionController::TestCase
-  include Devise::Test::ControllerHelpers
+  include Devise::TestHelpers
 
   setup do
     @request.env["devise.mapping"] = Devise.mappings[:user]

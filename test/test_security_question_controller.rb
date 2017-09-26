@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class TestWithSecurityQuestion < ActionController::TestCase
-  include Devise::Test::ControllerHelpers
+  include Devise::TestHelpers
   tests SecurityQuestion::UnlocksController
 
   setup do
@@ -36,7 +36,7 @@ class TestWithSecurityQuestion < ActionController::TestCase
 end
 
 class TestWithoutSecurityQuestion < ActionController::TestCase
-  include Devise::Test::ControllerHelpers
+  include Devise::TestHelpers
   tests Devise::UnlocksController
 
   setup do
