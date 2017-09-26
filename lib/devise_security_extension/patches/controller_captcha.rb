@@ -3,7 +3,7 @@ module DeviseSecurityExtension::Patches
     extend ActiveSupport::Concern
 
     included do
-      prepend_before_action :check_captcha, only: [:create]
+      prepend_before_filter :check_captcha, only: [:create]
     end
 
     private
