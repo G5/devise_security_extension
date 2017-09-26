@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TestPasswordArchivable < ActiveSupport::TestCase
+class TestPasswordExpirable < ActiveSupport::TestCase
   setup do
     Devise.expire_password_after = 2.month
   end
@@ -13,7 +13,7 @@ class TestPasswordArchivable < ActiveSupport::TestCase
     user = User.create password: 'password1', password_confirmation: 'password1'
     refute user.need_change_password?
 
-    user.update(password_changed_at: Time.now.ago(3.month))
+    user.update_column(:password_changed_at, Time.now.ago(3.month))
     assert user.need_change_password?
   end
 
